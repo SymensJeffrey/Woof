@@ -15,4 +15,10 @@ class PuppiesController < ApplicationController
 
     render json: puppy.as_json
   end
+
+  def destroy
+    puppy = Puppy.find_by(id:params[:id])
+    puppy.destroy
+    render json:{message:"puppy was deleted"}
+  end
 end

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   get "/puppies" => "puppies#index"
   post "/puppies" => "puppies#create"
+  delete "puppies/:id" => "puppies#destroy"
 end

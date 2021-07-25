@@ -5,6 +5,12 @@ class PuppiesController < ApplicationController
     render json: puppies.as_json
   end
 
+  def show
+    puppy = Puppy.find_by(id:params[:id])
+
+    render json: puppy.as_json
+  end
+
   def create
     puppy = Puppy.new(
       name:params[:name],
